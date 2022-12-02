@@ -1,12 +1,12 @@
 class Login{
-    txtUsername(){
-        return cy.xpath("//input[@name='username']")
+    txtPhoneNumber(){
+        return cy.xpath("//input[@placeholder='Nomor Telepon Anda']")
     }
     txtPassword(){
-        return cy.xpath("//input[@name='password']")
+        return cy.xpath("//input[@placeholder='Kata Sandi Anda']")
     }
     btnLogin(){
-        return cy.xpath("//input[@value='Login']")
+        return cy.xpath("//button[@type='button']")
     }
 
 }
