@@ -6,6 +6,7 @@ var homepage = new Homepage()
 var login = new Login()
 let phoneNumber
 let password
+let productName
 describe('Test Homepage', () => {
     beforeEach(() => {
         cy.visit('https://evermos.com/login')
@@ -17,15 +18,12 @@ describe('Test Homepage', () => {
       })
 
     it('Search Existing Product', () => {
+          productName = "Sarung Mangga - Sarung Mangga Songket Hijau SKT19"
           homepage.txtSearchProductHome().click()
-          homepage.txtSearchProduct().type('SARUNG{enter}')
+          homepage.txtSearchProduct().type(productName + '{enter}')
+          homepage.lnkProductName(productName).should(`exist`)
 
       }) 
-
-    it('Search Non-Existing Product', () => {
-        homepage.txtSearchProductHome().click()
-        homepage.txtSearchProduct().type('MESIN CUCI RUSAK{enter}')
-    }) 
     
     })
     

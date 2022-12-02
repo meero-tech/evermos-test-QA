@@ -8,6 +8,9 @@ class Homepage{
     txtSearchProduct(){
         return cy.xpath(`//input[@placeholder='Cari Produk di Evermos…']`)
     }
+    lnkProductName(productName){
+        return cy.xpath(`//a[normalize-space()='${productName}']`)
+    }
 }
 
 export default Homepage;
